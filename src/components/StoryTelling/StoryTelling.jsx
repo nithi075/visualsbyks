@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./Storytelling.css";
+import "./StoryTelling.css";
 
 // Import your images
 import maternityMain from "../../assets/img1.jpg";
