@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import "./GalleryDetails.css";
 
 import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/footer/footer";
 
 import wed1 from "../assets/wed1.jpg";
 import wed2 from "../assets/wed2.jpg";
