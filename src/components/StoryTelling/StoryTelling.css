@@ -1,224 +1,661 @@
-.storytelling-section {
-  background: #f8f6f2;
-  padding: 120px ;
-  overflow: hidden;
+/* =========================================
+PREMIUM WEDDING EDITORIAL PORTFOLIO
+LUXURY EDITORIAL THEME
+========================================= */
+
+.portfolio{
+
+position:relative;
+
+padding:160px 0;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+180deg,
+#faf8f4 0%,
+#f8f6f2 50%,
+#f3efe9 100%
+);
+
 }
 
-/* =====================
-   SECTION HEADER
-===================== */
+/* =========================================
+AMBIENT GLOWS
+========================================= */
 
-.section-header {
-  text-align: center;
-  margin-bottom: 8rem;
+.portfolio::before{
+
+content:"";
+
+position:absolute;
+
+width:650px;
+height:650px;
+
+top:-260px;
+right:-180px;
+
+background:
+radial-gradient(
+circle,
+rgba(198,167,125,.08),
+transparent 72%
+);
+
+filter:blur(15px);
+
+pointer-events:none;
+
 }
 
-.section-label {
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #b9915f;
-  margin-bottom: 1rem;
+.portfolio::after{
+
+content:"";
+
+position:absolute;
+
+width:420px;
+height:420px;
+
+bottom:-180px;
+left:-140px;
+
+background:
+radial-gradient(
+circle,
+rgba(198,167,125,.12),
+transparent 70%
+);
+
+pointer-events:none;
+
 }
 
-.section-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 400;
-  line-height: 1.1;
-  color: #1a1a1a;
+/* =========================================
+WRAPPER
+========================================= */
+
+.portfolio-wrapper{
+
+width:min(92%,1500px);
+
+margin:auto;
+
+position:relative;
+
+z-index:2;
+
 }
 
-.section-line {
-  width: 80px;
-  height: 1px;
-  background: #b9915f;
-  margin: 2rem auto 0;
+/* =========================================
+HEADER
+========================================= */
+
+.portfolio-header{
+
+text-align:center;
+
+margin-bottom:100px;
+
 }
 
-/* =====================
-   STORY BLOCK
-===================== */
+/* =========================================
+SMALL LABEL
+========================================= */
 
-.story-block {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
-  align-items: center;
-  max-width: 1300px;
-  margin: 0 auto 140px;
+.p-tag{
+
+display:inline-block;
+
+color:#c6a77d;
+
+font-size:.72rem;
+
+font-family:'Manrope',sans-serif;
+
+font-weight:400;
+
+letter-spacing:6px;
+
+text-transform:uppercase;
+
+margin-bottom:24px;
+
+position:relative;
+
 }
 
-.story-block.reverse {
-  grid-template-columns: 0.8fr 1.2fr;
+.p-tag::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+bottom:-10px;
+
+width:70px;
+
+height:1px;
+
+background:
+linear-gradient(
+to right,
+transparent,
+#c6a77d,
+transparent
+);
+
 }
 
-.story-block.reverse .story-image {
-  order: 2;
+/* =========================================
+TITLE
+========================================= */
+
+.portfolio-title{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:clamp(3rem,5vw,5.5rem);
+
+font-weight:400;
+
+line-height:1.08;
+
+color:#1a1a1a;
+
+margin-bottom:30px;
+
+letter-spacing:.05em;
+
 }
 
-.story-block.reverse .story-text {
-  order: 1;
+.portfolio-title span{
+
+color:#c6a77d;
+
+font-style:italic;
+
+font-weight:400;
+
 }
 
-/* =====================
-   IMAGE
-===================== */
+.portfolio-title::after{
 
-.story-image {
-  position: relative;
+content:"";
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:80%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transform:skewX(-20deg);
+
+animation:titleShine 5s ease infinite;
+
 }
 
-.story-image img {
-  width: 100%;
-  height: 700px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.8s ease;
+/* =========================================
+SUBTEXT
+========================================= */
+
+.p-sub{
+
+max-width:720px;
+
+margin:auto;
+
+color:#7d746b;
+
+font-family:'Manrope',sans-serif;
+
+font-size:1rem;
+
+line-height:1.9;
+
+font-weight:300;
+
 }
 
-.story-block:hover img {
-  transform: scale(1.03);
+/* =========================================
+SLIDER
+========================================= */
+
+.portfolio-slider{
+
+position:relative;
+
+width:100%;
+
+height:760px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-bottom:100px;
+
 }
 
-.story-number {
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  color: white;
-  font-size: 1rem;
-  letter-spacing: 0.25em;
-  font-family: "Playfair Display", serif;
+/* =========================================
+CARD
+========================================= */
+
+.portfolio-card{
+
+position:absolute;
+
+width:440px;
+
+height:610px;
+
+cursor:pointer;
+
+transition:
+transform 1s cubic-bezier(.16,1,.3,1),
+opacity .8s ease,
+filter .8s ease;
+
 }
 
-/* =====================
-   TEXT
-===================== */
+.card-image-wrap{
 
-.story-category {
-  display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #b9915f;
-  margin-bottom: 1rem;
+position:relative;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+border-radius:14px;
+
+background:#ddd;
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.08);
+
 }
 
-.story-text h2 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 0.95;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
+.card-image-wrap::after{
+
+content:"";
+
+position:absolute;
+
+inset:30px;
+
+border:1px solid rgba(198,167,125,.25);
+
+pointer-events:none;
+
+transition:.5s ease;
+
 }
 
-.story-text p {
-  font-size: 1rem;
-  line-height: 1.9;
-  color: #555;
-  max-width: 450px;
+.card-image-wrap img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:
+transform 2s cubic-bezier(.16,1,.3,1);
+
+filter:
+brightness(.98)
+contrast(1.02);
+
+animation:slowFloat 8s ease-in-out infinite;
+
 }
 
-/* =====================
-   BUTTONS
-===================== */
+.portfolio-card:hover img{
 
-.btn-group {
-  display: flex;
-  gap: 20px;
-  margin-top: 2rem;
+transform:scale(1.06);
+
 }
 
-.view-more {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  border-bottom: 1px solid #1a1a1a;
-  padding-bottom: 4px;
+.portfolio-card:hover .card-image-wrap::after{
+
+inset:20px;
+
+border-color:rgba(198,167,125,.55);
+
 }
 
-.book-btn {
-  text-decoration: none;
-  border: 1px solid #b9915f;
-  color: #1a1a1a;
-  padding: 12px 28px;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  transition: 0.3s ease;
+/* =========================================
+IMAGE OVERLAY
+========================================= */
+
+.card-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+to top,
+rgba(26,26,26,.50),
+transparent 45%
+),
+
+linear-gradient(
+to right,
+rgba(26,26,26,.05),
+rgba(26,26,26,.25)
+);
+
 }
 
-.book-btn:hover {
-  background: #b9915f;
-  color: white;
+/* =========================================
+ACTIVE CARD
+========================================= */
+
+.portfolio-card.active{
+
+z-index:5;
+
+box-shadow:
+0 35px 90px rgba(0,0,0,.12);
+
 }
 
-/* =====================
-   MOBILE
-===================== */
+/* =========================================
+DETAILS
+========================================= */
 
-@media (max-width: 768px) {
+.active-details{
 
-  .storytelling-section {
-    padding: 80px 20px;
-  }
+text-align:center;
 
-  .section-header {
-    margin-bottom: 4rem;
-  }
+max-width:760px;
 
-  .story-block,
-  .story-block.reverse {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    margin-bottom: 80px;
-  }
+margin:auto;
 
-  .story-block.reverse .story-image,
-  .story-block.reverse .story-text {
-    order: unset;
-  }
-
-  .story-image img {
-    height: 420px;
-  }
-
-  .story-text {
-    text-align: center;
-  }
-
-  .story-text p {
-    max-width: 100%;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .book-btn {
-    width: 100%;
-    max-width: 280px;
-    text-align: center;
-  }
 }
 
-/* Small Mobile */
+.active-category{
 
-@media (max-width: 480px) {
+display:block;
 
-  .story-image img {
-    height: 320px;
-  }
+color:#c6a77d;
 
-  .section-title {
-    font-size: 2rem;
-  }
+font-size:.72rem;
 
-  .story-text h2 {
-    font-size: 1.7rem;
-  }
+font-family:'Manrope',sans-serif;
+
+letter-spacing:5px;
+
+margin-bottom:20px;
+
+text-transform:uppercase;
+
+}
+
+.active-details h3{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:clamp(2.4rem,4vw,4rem);
+
+font-weight:400;
+
+color:#1a1a1a;
+
+margin-bottom:22px;
+
+line-height:1.1;
+
+}
+
+.active-details p{
+
+color:#7d746b;
+
+font-family:'Manrope',sans-serif;
+
+line-height:1.9;
+
+font-size:1rem;
+
+margin-bottom:42px;
+
+}
+
+/* =========================================
+BUTTON
+========================================= */
+
+.portfolio-btn{
+
+position:relative;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:16px;
+
+background:none;
+
+border:none;
+
+color:#1a1a1a;
+
+font-family:'Manrope',sans-serif;
+
+font-size:.72rem;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+padding-bottom:14px;
+
+cursor:pointer;
+
+transition:.4s ease;
+
+overflow:hidden;
+
+}
+
+.portfolio-btn::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:0;
+
+width:100%;
+
+height:1px;
+
+background:rgba(26,26,26,.15);
+
+transition:.4s ease;
+
+}
+
+.portfolio-btn:hover{
+
+color:#c6a77d;
+
+transform:translateY(-3px);
+
+}
+
+.portfolio-btn:hover::after{
+
+background:#c6a77d;
+
+}
+
+.portfolio-btn span{
+
+transition:.4s ease;
+
+}
+
+.portfolio-btn:hover span{
+
+transform:translateX(6px);
+
+}
+
+/* =========================================
+ANIMATIONS
+========================================= */
+
+@keyframes titleShine{
+
+0%{left:-120%;}
+
+40%{left:130%;}
+
+100%{left:130%;}
+
+}
+
+@keyframes slowFloat{
+
+0%{
+transform:scale(1) translateY(0);
+}
+
+50%{
+transform:scale(1.03) translateY(-8px);
+}
+
+100%{
+transform:scale(1) translateY(0);
+}
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media(max-width:991px){
+
+.portfolio{
+padding:110px 0;
+}
+
+.portfolio-slider{
+height:580px;
+}
+
+.portfolio-card{
+width:340px;
+height:470px;
+}
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+.portfolio{
+padding:90px 0;
+}
+
+.portfolio-slider{
+height:400px;
+margin-bottom:50px;
+}
+
+.portfolio-card{
+width:230px;
+height:320px;
+}
+
+.card-image-wrap::after{
+inset:18px;
+}
+
+.portfolio-title{
+font-size:2.8rem;
+}
+
+.p-sub{
+font-size:.9rem;
+line-height:1.8;
+}
+
+.active-details h3{
+font-size:1.9rem;
+}
+
+.active-details p{
+font-size:.9rem;
+}
+
+.portfolio-card img{
+animation:none;
+}
+
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+.portfolio{
+padding:70px 0;
+}
+
+.portfolio-title{
+font-size:2.2rem;
+}
+
+.portfolio-slider{
+height:330px;
+}
+
+.portfolio-card{
+width:180px;
+height:260px;
+}
+
+.active-details h3{
+font-size:1.45rem;
+}
+
+.active-details p{
+font-size:.82rem;
+}
+
 }

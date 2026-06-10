@@ -1,149 +1,90 @@
-import { motion } from "framer-motion";
 import "./TenPartNarrative.css";
 
-// Import your images
+// your gallery images
 import img1 from "../../assets/featured/img1.jpg";
 import img2 from "../../assets/featured/img2.jpg";
 import img3 from "../../assets/featured/img3.jpg";
 import img4 from "../../assets/featured/img4.jpg";
 import img5 from "../../assets/featured/img5.jpg";
 import img6 from "../../assets/featured/img6.jpg";
+import img7 from "../../assets/featured/img7.jpg";
+import img8 from "../../assets/featured/img8.jpg";
 
-const containerVariants = {
-  hidden: {},
+// your video
+import weddingVideo from "../../assets/featured/wedding-video.mp4";
 
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
+export default function Featured() {
 
-const imageVariants = {
-  hidden: {
-    opacity: 0,
-    y: 80,
-    scale: 0.92,
-  },
-
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-
-    transition: {
-      duration: 1.1,
-      ease: [0.19, 1, 0.22, 1],
-    },
-  },
-};
-
-const TenPartNarrative = () => {
-
-  const images = [
-
-    {
-      id: 1,
-      class: "item-1",
-      url: img1,
-    },
-
-    {
-      id: 2,
-      class: "item-2",
-      url: img2,
-    },
-
-    {
-      id: 3,
-      class: "item-3",
-      url: img3,
-    },
-
-    {
-      id: 4,
-      class: "item-4",
-      url: img4,
-    },
-
-    {
-      id: 5,
-      class: "item-5",
-      url: img5,
-    },
-
-    {
-      id: 6,
-      class: "item-6",
-      url: img6,
-    },
-
+  const galleryImages = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8
   ];
 
+  const handleInstagramRedirect = () => {
+    window.open(
+      "https://www.instagram.com/frame_makers_studio/",
+      "_blank"
+    );
+  };
+
   return (
+    <section className="featured">
 
-    <section className="narrative-section">
+      <span className="tag">
+        OUR FAVORITE MOMENTS
+      </span>
 
-      {/* TOP TITLE */}
-      <motion.div
-        className="top-title"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
-        Captured Moments
-      </motion.div>
+      <h2>
+        FEATURED WEDDING
+      </h2>
 
-      {/* GRID */}
-      <motion.div
-        className="narrative-grid"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      {/* video section */}
+      <div className="featured-video-container">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="featured-video"
+        >
+          <source src={weddingVideo} type="video/mp4" />
+        </video>
+      </div>
 
-        {images.map((img) => (
+      {/* collage */}
+      <div className="featuredGrid">
 
-          <motion.div
-            key={img.id}
-            className={`narrative-item ${img.class}`}
-            variants={imageVariants}
-
-            whileHover={{
-              scale: 1.03,
-            }}
-
-            transition={{
-              duration: 0.7,
-              ease: [0.19, 1, 0.22, 1],
-            }}
-          >
-
-            {/* IMAGE */}
-            <motion.img
-              src={img.url}
-              alt="Gallery"
-
-              whileHover={{
-                scale: 1.08,
-              }}
-
-              transition={{
-                duration: 1.2,
-                ease: [0.19, 1, 0.22, 1],
-              }}
-            />
-
-          </motion.div>
-
+        {galleryImages.slice(0,3).map((img,index)=>(
+          <img key={index} src={img} alt="" />
         ))}
 
-      </motion.div>
+        <div className="quote-box">
+          MEMORIES
+          <br/>
+          THAT LAST
+          <br/>
+          FOREVER
+        </div>
+
+        {galleryImages.slice(3).map((img,index)=>(
+          <img key={index} src={img} alt="" />
+        ))}
+
+      </div>
+
+      <button 
+        className="featured-btn"
+        onClick={handleInstagramRedirect}
+      >
+        View More ↗
+      </button>
 
     </section>
   );
-};
-
-export default TenPartNarrative;
+}

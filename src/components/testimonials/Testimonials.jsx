@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import "./Testimonials.css";
 
-import client1 from "../../assets/client1.jpg";
-import client2 from "../../assets/client2.png";
+import client1 from "../../assets/story3.jpg";
+import client2 from "../../assets/story4.jpg";
 
 const testimonials = [
   {

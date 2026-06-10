@@ -1,374 +1,553 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+/* =========================================
+PREMIUM WEDDING EDITORIAL FEATURED SECTION
+LUXURY EDITORIAL THEME
+========================================= */
 
-.narrative-section {
-  background-color: #f8f6f2;
-  padding: 140px 20px;
-  overflow: hidden;
+:root{
+
+--bg-main:#f8f6f2;
+--bg-soft:#f3efe9;
+
+--gold:#c6a77d;
+--gold-light:#d8c0a0;
+
+--brown:#1a1a1a;
+--brown-light:#7d746b;
+
+--white:#ffffff;
+
+--font-serif:'Cormorant Garamond', serif;
+--font-sans:'Manrope', sans-serif;
 }
 
-/* =========================
-   TOP SMALL TITLE
-========================= */
+/* =========================================
+SECTION
+========================================= */
 
-.top-title {
+.featured{
 
-  text-align: center;
+position:relative;
+overflow:hidden;
 
-  font-family: 'Cormorant Garamond', serif;
+background:
+linear-gradient(
+180deg,
+#faf8f4 0%,
+#f8f6f2 50%,
+#f3efe9 100%
+);
 
-  font-size: 14px;
+padding:120px 20px;
+text-align:center;
 
-  letter-spacing: 0.18em;
-
-  text-transform: uppercase;
-
-  color: #c6a77d;
-
-  margin-bottom: 28px;
 }
 
-/* =========================
-   MAIN GRID
-========================= */
+/* =========================================
+DECORATIVE GLOWS
+========================================= */
 
-.narrative-grid {
+.featured::before{
 
-  position: relative;
+content:"";
 
-  width: 100%;
+position:absolute;
 
-  max-width: 950px;
+width:700px;
+height:700px;
 
-  margin: 0 auto;
+top:-280px;
+right:-220px;
 
-  display: grid;
+background:
+radial-gradient(
+circle,
+rgba(198,167,125,.08),
+transparent 72%
+);
 
-  grid-template-columns:
-    340px
-    260px
-    260px;
+filter:blur(25px);
+pointer-events:none;
 
-  grid-template-rows:
-    250px
-    250px
-    250px;
-
-  gap: 18px;
 }
 
-/* =========================
-   IMAGE POSITION
-========================= */
+.featured::after{
 
-/* LEFT LARGE */
+content:"";
 
-.item-1 {
-  grid-column: 1 / 2;
-  grid-row: 1 / 4;
+position:absolute;
+
+width:500px;
+height:500px;
+
+bottom:-220px;
+left:-180px;
+
+background:
+radial-gradient(
+circle,
+rgba(198,167,125,.12),
+transparent 70%
+);
+
+opacity:.7;
+pointer-events:none;
+
 }
 
-/* TOP CENTER */
+/* =========================================
+CONTENT WRAPPER
+========================================= */
 
-.item-2 {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+.featured > *{
+
+position:relative;
+z-index:2;
+
 }
 
-/* TOP RIGHT */
+/* =========================================
+SMALL LABEL
+========================================= */
 
-.item-3 {
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
+.tag{
+
+display:inline-block;
+
+font-size:.68rem;
+
+letter-spacing:6px;
+
+color:var(--gold);
+
+font-family:var(--font-sans);
+
+text-transform:uppercase;
+
+margin-bottom:20px;
+
+font-weight:400;
+
+position:relative;
+
 }
 
-/* CENTER */
+.tag::after{
 
-.item-4 {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
+content:"";
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+bottom:-10px;
+
+width:70px;
+
+height:1px;
+
+background:
+linear-gradient(
+to right,
+transparent,
+var(--gold),
+transparent
+);
+
 }
 
-/* RIGHT CENTER */
+/* =========================================
+HEADING
+========================================= */
 
-.item-5 {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
+.featured h2{
+
+font-family:var(--font-serif);
+
+font-size:clamp(2.8rem,5vw,5rem);
+
+font-weight:400;
+
+color:var(--brown);
+
+letter-spacing:.05em;
+
+line-height:1.1;
+
+margin-bottom:50px;
+
 }
 
-/* BOTTOM WIDE */
+/* =========================================
+MAIN IMAGE
+========================================= */
 
-.item-6 {
-  grid-column: 2 / 4;
-  grid-row: 3 / 4;
+.featured-main{
+
+width:100%;
+max-width:950px;
+
+margin:auto;
+display:block;
+
+margin-bottom:18px;
+
+border-radius:14px;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.06);
+
+transition:
+transform 1s cubic-bezier(.16,1,.3,1),
+filter .8s ease;
+
 }
 
-/* =========================
-   CARD STYLE
-========================= */
+.featured-main:hover{
 
-.narrative-item {
+transform:scale(1.02);
 
-  overflow: hidden;
-
-  background-color: #e8dfd3;
-
-  border: 1px solid rgba(198,167,125,0.12);
 }
 
-/* IMAGE */
+/* =========================================
+COLLAGE GRID
+========================================= */
 
-.narrative-item img {
+.featuredGrid{
 
-  width: 100%;
+max-width:950px;
 
-  height: 100%;
+margin:auto;
 
-  object-fit: cover;
+display:grid;
 
-  display: block;
+grid-template-columns:
+repeat(3,1fr);
 
-  transition:
-    transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+gap:12px;
+
 }
 
-.narrative-item:hover img {
+/* =========================================
+GRID IMAGES
+========================================= */
 
-  transform: scale(1.05);
+.featuredGrid img{
+
+width:100%;
+height:150px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+transition:
+transform .8s cubic-bezier(.16,1,.3,1);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.05);
+
 }
 
-/* =========================
-   FLOATING SCRIPT TEXT
-========================= */
+.featuredGrid img:hover{
 
-.floating-text {
+transform:
+translateY(-4px)
+scale(1.03);
 
-  position: absolute;
-
-  z-index: 10;
-
-  font-family: 'Cormorant Garamond', serif;
-
-  font-style: italic;
-
-  font-weight: 400;
-
-  font-size: 54px;
-
-  color: #c6a77d;
-
-  line-height: 1;
 }
 
-/* LEFT */
+/* =========================================
+QUOTE BOX
+========================================= */
 
-.left-text {
+.quote-box{
 
-  top: 105px;
+background:
+linear-gradient(
+135deg,
+#c6a77d,
+#d8c0a0
+);
 
-  left: -58px;
+color:#ffffff;
+
+font-family:var(--font-serif);
+
+font-size:1.1rem;
+
+font-weight:500;
+
+letter-spacing:1px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:22px;
+
+border-radius:10px;
+
+box-shadow:
+0 15px 35px rgba(198,167,125,.18);
+
 }
 
-/* RIGHT */
+/* =========================================
+BUTTON
+========================================= */
 
-.right-text {
+.featured-btn{
 
-  right: -78px;
+margin-top:50px;
 
-  bottom: 120px;
+background:var(--gold);
+
+color:#ffffff;
+
+border:none;
+
+padding:14px 34px;
+
+font-size:.68rem;
+
+letter-spacing:4px;
+
+font-family:var(--font-sans);
+
+font-weight:400;
+
+text-transform:uppercase;
+
+cursor:pointer;
+
+transition:.4s ease;
+
+border-radius:4px;
+
+box-shadow:
+0 10px 25px rgba(198,167,125,.18);
+
 }
 
-/* =========================
-   MOBILE
-========================= */
+.featured-btn:hover{
 
-@media (max-width: 768px) {
+background:var(--brown);
 
-  .narrative-section {
+transform:translateY(-3px);
 
-    padding: 60px 12px;
-  }
+box-shadow:
+0 15px 35px rgba(0,0,0,.10);
 
-  .top-title {
-
-    font-size: 2rem;
-    color: black;
-
-    margin-bottom: 20px;
-  }
-
-  .narrative-grid {
-
-    max-width: 390px;
-
-    grid-template-columns:
-      145px
-      112px
-      112px;
-
-    grid-template-rows:
-      112px
-      112px
-      112px;
-
-    gap: 8px;
-  }
-
-  .floating-text {
-
-    font-size: 28px;
-  }
-
-  .left-text {
-
-    top: 48px;
-
-    left: -18px;
-  }
-
-  .right-text {
-
-    right: -22px;
-
-    bottom: 55px;
-  }
-}
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 768px) {
-
-  .narrative-section {
-    padding: 80px 15px;
-  }
-
-  .top-title {
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    margin-bottom: 25px;
-  }
-
-  .narrative-grid {
-
-    max-width: 420px;
-
-    grid-template-columns:
-      160px
-      120px
-      120px;
-
-    grid-template-rows:
-      120px
-      120px
-      120px;
-
-    gap: 10px;
-  }
-
-  .floating-text {
-    font-size: 32px;
-  }
-
-  .left-text {
-    top: 55px;
-    left: -15px;
-  }
-
-  .right-text {
-    right: -18px;
-    bottom: 60px;
-  }
 }
 
+/* =========================================
+VIDEO CONTAINER
+========================================= */
 
-/* =========================
-   MOBILE
-========================= */
+.featured-video-container{
 
-@media (max-width: 480px) {
+width:100%;
 
-  .narrative-section {
-    padding: 60px 12px;
-  }
+max-width:950px;
 
-  .top-title {
-    font-size: 1.7rem;
-    letter-spacing: 0.15em;
-    margin-bottom: 20px;
-  }
+margin:30px auto;
 
-  .narrative-grid {
+overflow:hidden;
 
-    max-width: 340px;
+border-radius:14px;
 
-    grid-template-columns:
-      135px
-      95px
-      95px;
+box-shadow:
+0 20px 50px rgba(0,0,0,.06);
 
-    grid-template-rows:
-      95px
-      95px
-      95px;
-
-    gap: 8px;
-  }
-
-  .floating-text {
-    font-size: 24px;
-    opacity: 0.9;
-  }
-
-  .left-text {
-    top: 42px;
-    left: -10px;
-  }
-
-  .right-text {
-    right: -10px;
-    bottom: 45px;
-  }
 }
 
+/* =========================================
+VIDEO
+========================================= */
 
-/* =========================
-   SMALL DEVICES
-========================= */
+.featured-video{
 
-@media (max-width: 360px) {
+width:100%;
 
-  .narrative-section {
-    padding: 50px 10px;
-  }
+height:520px;
 
-  .narrative-grid {
+object-fit:cover;
 
-    max-width: 300px;
+display:block;
 
-    grid-template-columns:
-      120px
-      82px
-      82px;
+}
 
-    grid-template-rows:
-      82px
-      82px
-      82px;
+/* =========================================
+TEXT
+========================================= */
 
-    gap: 6px;
-  }
+.featured p{
 
-  .floating-text {
-    font-size: 20px;
-  }
+font-family:var(--font-sans);
 
-  .left-text {
-    top: 35px;
-    left: -8px;
-  }
+color:var(--brown-light);
 
-  .right-text {
-    right: -8px;
-    bottom: 38px;
-  }
+font-size:1.05rem;
+
+line-height:1.8;
+
+max-width:700px;
+
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.featured small{
+
+color:#9b9188;
+
+font-family:var(--font-sans);
+
+}
+
+/* =========================================
+TABLET
+========================================= */
+
+@media (min-width:768px){
+
+.featuredGrid img{
+height:190px;
+}
+
+.quote-box{
+font-size:1.15rem;
+}
+
+}
+
+/* =========================================
+DESKTOP
+========================================= */
+
+@media (min-width:1024px){
+
+.featured{
+padding:160px 20px;
+}
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width:768px){
+
+.featured{
+padding:90px 20px;
+}
+
+.featured h2{
+
+
+font-size:2.3rem;
+
+line-height:1.12;
+
+margin-bottom:36px;
+
+
+}
+
+.tag{
+
+
+font-size:.56rem;
+
+letter-spacing:4px;
+
+
+}
+
+.featuredGrid{
+
+
+gap:8px;
+
+
+}
+
+.featuredGrid img{
+
+
+height:110px;
+
+
+}
+
+.quote-box{
+
+
+font-size:.8rem;
+
+padding:14px;
+
+
+}
+
+.featured-video{
+
+
+height:250px;
+
+
+}
+
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+.featured{
+
+
+padding:70px 16px;
+
+
+}
+
+.featured h2{
+
+
+font-size:1.95rem;
+
+
+}
+
+.featuredGrid img{
+
+
+height:120px;
+
+
+}
+
+.featured-btn{
+
+
+font-size:.56rem;
+
+letter-spacing:2px;
+
+padding:12px 24px;
+
+
+}
+
 }

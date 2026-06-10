@@ -34,11 +34,12 @@ function HomePage() {
 
       <Hero />
 
-      <StorySection />
+      {/* <StorySection /> */}
+         <Storytelling />
 
       <TenPartNarrative />
 
-      <Storytelling />
+   
 
 
       <About />
